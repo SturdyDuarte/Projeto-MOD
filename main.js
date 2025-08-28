@@ -2,7 +2,7 @@
 const entrada=require('prompt-sync')({ sigint: false });
 let papas = [];
 let votos = [];
-let listaVotos = [0, 1, 2, 3, 4];
+let numeroDosCandidatos = [0, 1, 2, 3, 4];
 let votacao = true;
 
 // Collecting names of 5 candidates (Coletando dados de 5 candidatos)
@@ -18,7 +18,7 @@ while (votacao) {
     let voto = Number(entrada('Digite o número do candidato que deseja votar: '));
 
     // Check if the vote is valid (Verificando se o voto é válido)
-    if (listaVotos.includes(voto)) {
+    if (numeroDosCandidatos.includes(voto)) {
         console.log(`Voto computado para ${papas[voto]}`);
         votos.push(voto);
     } else {
@@ -33,3 +33,17 @@ while (votacao) {
 }
 
 console.log('Votação encerrada. Obrigado por participar!');
+
+// Counting votes for candidate 0 (Contando votos para os candidatos)
+const contadorDeVotosCandidato0 = votos.filter(element => element === 0).length;
+const contadorDeVotosCandidato1 = votos.filter(element => element === 1).length;
+const contadorDeVotosCandidato2 = votos.filter(element => element === 2).length;
+const contadorDeVotosCandidato3 = votos.filter(element => element === 3).length;
+const contadorDeVotosCandidato4 = votos.filter(element => element === 4).length;
+
+// Displaying the qantity of votes (Mostrando a quantidade de votos)
+console.log(`O Candidato '${papas[0]} recebeu ${contadorDeVotosCandidato0} votos.`);
+console.log(`O Candidato '${papas[1]} recebeu ${contadorDeVotosCandidato1} votos.`);
+console.log(`O Candidato '${papas[2]} recebeu ${contadorDeVotosCandidato2} votos.`);
+console.log(`O Candidato '${papas[3]} recebeu ${contadorDeVotosCandidato3} votos.`);
+console.log(`O Candidato '${papas[4]} recebeu ${contadorDeVotosCandidato4} votos.`);
