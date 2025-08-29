@@ -47,3 +47,20 @@ console.log(`O Candidato '${papas[1]} recebeu ${contadorDeVotosCandidato1} votos
 console.log(`O Candidato '${papas[2]} recebeu ${contadorDeVotosCandidato2} votos.`);
 console.log(`O Candidato '${papas[3]} recebeu ${contadorDeVotosCandidato3} votos.`);
 console.log(`O Candidato '${papas[4]} recebeu ${contadorDeVotosCandidato4} votos.`);
+console.log(`O total de votos computados foi de ${votos.length} votos.`);
+
+// Calculating total votes (Calculando o total de votos)
+let winner = (2/3) * votos.length;
+if (contadorDeVotosCandidato0 >= winner) {
+    console.log(`O Candidato '${papas[0]}' é o vencedor com ${contadorDeVotosCandidato0} votos.`)
+} else if (contadorDeVotosCandidato1 >= winner) {
+    console.log(`O Candidato '${papas[1]}' é o vencedor com ${contadorDeVotosCandidato1} votos.`)
+} else if (contadorDeVotosCandidato2 >= winner) {
+    console.log(`O Candidato '${papas[2]}' é o vencedor com ${contadorDeVotosCandidato2} votos.`)
+} else if (contadorDeVotosCandidato3 >= winner) {
+    console.log(`O Candidato '${papas[3]}' é o vencedor com ${contadorDeVotosCandidato3} votos.`)
+} else if (contadorDeVotosCandidato4 >= winner) {
+    console.log(`O Candidato '${papas[4]}' é o vencedor com ${contadorDeVotosCandidato4} votos.`)
+} else {
+    console.log('Nenhum candidato obteve 2/3 dos votos. Será necessário um novo turno de votações.');
+}
